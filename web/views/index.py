@@ -6,4 +6,5 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("欢迎进入前台的大堂点餐端")
+    """大唐点餐前台"""
+    return render(request, "web/index.html")

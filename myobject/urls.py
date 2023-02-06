@@ -14,11 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, path, re_path
+from django.views.static import serve
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', include('web.urls')),    # 默认访问前台大堂点餐界面
     path('myadmin/', include('myadmin.urls')),    # 访问后台管理
     path('mobile/', include('mobile.urls')),    # 访问会员移动端
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 ]

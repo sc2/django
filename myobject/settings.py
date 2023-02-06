@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from pathlib import Path
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -22,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%q+)z(7avsgt2e&t@twukz%46ei!7$6^zq%f+sgjf$(e-u3id!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -120,6 +122,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# 出现的问题根本原因是：当我们在开发django应用时如果设置了 DEBUG = True，那么django便会自动帮我们对静态文件进行路由；但是当我们设置DEBUG =
+# False后，这一功能便没有了，此时静态文件就会出现加载失败的情况，想要让静态文件正常显示，我们就需要配置静态文件服务了。参考官方文档https://docs.djangoproject.com/en/2.0/howto
+# /static-files/
+'''修改urls.py
+from django.views import static ##新增
+from django.conf import settings ##新增
+from django.conf.urls import url ##新增
+
+
+urlpatterns = [
+  path('', include('user.urls')),  
+　##　以下是新增
+  url(r'^static/(?P<path>.*)$', static.serve,
+      {'document_root': settings.STATIC_ROOT}, name='static'),
+]
+'''
+STATIC_ROOT = 'static'  # 新增行,debug=false的时候，需要
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, '/static/'),
 ]
