@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/common.css">
+    <style type="text/css">
+        body{min-height:2000px;padding-top:70px;}
+
+        .navbar-default{background-color:#ff8800;border-color:#e7e7e7;}
+        .navbar-default .navbar-brand{color:#fff;}
+        .navbar-default .navbar-nav > li > a,.navbar-default .navbar-nav > li > a:visited {
+            color: #fff;
+            width:100px;
+            font-size:14px;
+            text-align:center;
+        }
+        .navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > .active > a:visited,.navbar-default .navbar-nav li a:hover,.navbar-default .navbar-nav > .active > a:hover,.navbar-default .navbar-nav li a:active {
+            color:#fff;
+            background-color: #FF4500;
+            width:100px;
+            font-size:14px;
+            text-align:center;
+        }
+        
+        table tr td{font-size:11px;} 
+        table tr td.price{color:red;}
+        table tr td.num span{color:red;padding:0px 5px}
+        table tr td.num i{border-width:0px;background-color:#ddd;}  
+
+        div.shoplist div.bn{font-size:12px;line-height:25px;}
+        div.shoplist div.bn span.price{color:red;}
+
+        .container .panel .panel-heading{padding:0px 15px;line-height:40px;}
+        .container .panel .panel-heading button.btn{margin-top:5px;width:100px;float:right}
+
+        .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+            z-index: 3;
+            color: #fff;
+            cursor: default;
+            background-color: #ff8800;
+            border-color: #ff8800;
+        }
+    </style>
+</head>
+<body>
+    <!-- 页头导航开始 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> <span style="font-weight:bold;">田老师红烧肉</span><span style="font-size:14px;">（朝阳将台路店）</span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">堂吃点餐</a></li>
+            <li class="active"><a href="#about">当前订单</a></li>
+            <li><a href="#contact">历史订单</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"> 张无忌</a></li>
+            <li><a href="../navbar-static-top/">退出</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <!-- 页头导航结束 -->
+
+    <!-- 页面主体开始 -->  
+    <div class="container">
+        <div class="col-md-12">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 订 单 列 表
+                    <button type="button" class="btn btn-warning btn-sm">刷 &nbsp; 新</button>
+                </div>
+                <table class="table table-striped">
+                        <tr>
+                            <th width="30">订单号</th>
+                            <th>会员</th>
+                            <th>操作员</th>
+                            <th>金额</th>
+                            <th>付款方式</th>
+                            <th>收款渠道</th>
+                            <th>支付状态</th>
+                            <th>订单状态</th>
+                            <th>下单时间</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr>
+                            <td>2018091601</td>
+                            <td>id203</td>
+                            <td>张三</td>
+                            <td class="price">128.00</td>
+                            <td>收银员</td>
+                            <td>微信</td> 
+                            <td>已支付</td>
+                            <td>运行中</td>
+                            <td>2016-09-16 18：30：20</td>
+                            <td>
+                                <button type="button" onclick="$('#myModal').modal({keyboard:false})" class="btn btn-warning btn-xs" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> 详情</button> 
+                                <a href="#" class="btn btn-info btn-xs" role="button"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 完成</a> 
+                                <a href="#" class="btn btn-danger btn-xs" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2018091601</td>
+                            <td>id203</td>
+                            <td>张三</td>
+                            <td class="price">128.00</td>
+                            <td>收银员</td>
+                            <td>微信</td> 
+                            <td>已支付</td>
+                            <td>运行中</td>
+                            <td>2016-09-16 18：30：20</td>
+                            <td>
+                                <a href="#" class="btn btn-warning btn-xs" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> 详情</a> 
+                                <a href="#" class="btn btn-info btn-xs" role="button"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 完成</a> 
+                                <a href="#" class="btn btn-danger btn-xs" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2018091601</td>
+                            <td>id203</td>
+                            <td>张三</td>
+                            <td class="price">128.00</td>
+                            <td>收银员</td>
+                            <td>微信</td> 
+                            <td>已支付</td>
+                            <td>运行中</td>
+                            <td>2016-09-16 18：30：20</td>
+                            <td>
+                                <a href="#" class="btn btn-warning btn-xs" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> 详情</a> 
+                                <a href="#" class="btn btn-info btn-xs" role="button"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 完成</a> 
+                                <a href="#" class="btn btn-danger btn-xs" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2018091601</td>
+                            <td>id203</td>
+                            <td>张三</td>
+                            <td class="price">128.00</td>
+                            <td>收银员</td>
+                            <td>微信</td> 
+                            <td>已支付</td>
+                            <td>运行中</td>
+                            <td>2016-09-16 18：30：20</td>
+                            <td>
+                                <a href="#" class="btn btn-warning btn-xs" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> 详情</a> 
+                                <a href="#" class="btn btn-info btn-xs" role="button"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 完成</a> 
+                                <a href="#" class="btn btn-danger btn-xs" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除</a>
+                            </td>
+                        </tr>
+                </table>
+                <div class="panel-footer" style="height:50px">
+                    <div style="width:120px;float:left;margin:5px 0px;">合计订单：<span style="color:red;font-weight:bold;">38</span> 个</div>
+                    <nav aria-label="Page navigation" class="text-right">
+                      <ul class="pagination" style="margin:0px;">
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页面主体结束 -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">订单详情</h4>
+          </div>
+          <div class="modal-body">
+            <table class="table table-hover">
+                <tr>
+                    <th>序号</th>
+                    <th>菜品名称</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>梅菜扣肉+番茄鸡蛋</td>
+                    <td>25</td>
+                    <td>2</td>
+                    <td>50</td>
+                    <td>正常</td>
+                    <td><button>删除</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>肉沫酸豆角</td>
+                    <td>15</td>
+                    <td>1</td>
+                    <td>15</td>
+                    <td>正常</td>
+                    <td><button>删除</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>红烧肉</td>
+                    <td>18</td>
+                    <td>1</td>
+                    <td>18</td>
+                    <td>正常</td>
+                    <td><button>删除</button></td>
+                </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary">保存</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>

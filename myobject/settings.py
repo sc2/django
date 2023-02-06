@@ -142,3 +142,4 @@ STATIC_ROOT = 'static'  # 新增行,debug=false的时候，需要
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, '/static/'),
 ]
+# 1
