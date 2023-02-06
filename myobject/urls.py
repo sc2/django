@@ -19,6 +19,7 @@ from django.views.static import serve
 from django.conf import settings
 from django.conf.urls.static import static
 
+# 111
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', include('web.urls')),    # 默认访问前台大堂点餐界面
