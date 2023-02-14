@@ -23,6 +23,12 @@ class Shopmiddleware:
                 # 重定向到登录页面
                 return redirect(reverse("myadmin_login"))
 
+        # 判断大唐点餐请求的判断，判断是否请求（session中是否有webuser）
+        if re.match(r'^/web', path):
+            # 判断是否登录（在session中是否有adminuser）
+            if 'webuser' not in request.session:
+                # 重定向到登录页面
+                return redirect(reverse("web_login"))
 
         response = self.get_response(request)
         # Code to be executed for each request/response after

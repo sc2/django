@@ -56,8 +56,8 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar/">
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"> 张无忌</span></a></li>
-            <li><a href="../navbar-static-top/">退出</a></li>
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"> {{request.session.webuser.nickname}}</span></a></li>
+            <li><a href="{% url 'web_logout' %}">退出</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
