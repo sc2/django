@@ -22,9 +22,9 @@ def login(request):
 def dologin(request):
     try:
         # 执行验证码判断
-        if request.POST['code'] != request.session['verifycode']:
-            context = {"info": "验证码错误！"}
-            return render(request, "myadmin/index/login.html", context)
+        # if request.POST['code'] != request.session['verifycode']:
+        #     context = {"info": "验证码错误！"}
+        #     return render(request, "myadmin/index/login.html", context)
         # 根据登录账号获取登录者信息
         user = User.objects.get(username=request.POST['username'])
         # 判断当前用户是否是管理员
