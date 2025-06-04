@@ -74,12 +74,24 @@ WSGI_APPLICATION = 'myobject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# 本地数据库连接是这个
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'osdb',
+#         'USER': 'root',
+#         'PASSWORD': '123456',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+# 云端数据库连接是这个
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'osdb',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': '14562671f241041d',
         'HOST': 'localhost',
         'PORT': '3306',
     }
