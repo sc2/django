@@ -6,4 +6,6 @@ print("冲突1")
 print("冲突2")
 print('修复了bug1')
 print('开发了功能登录')
-print('开发了新功能注册1')
+print('开发了新功能注册')
+print('线上合并分支pr')
+
