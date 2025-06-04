@@ -85,6 +85,7 @@ WSGI_APPLICATION = 'myobject.wsgi.application'
 #         'PORT': '3306',
 #     }
 # }
+
 # 云端数据库连接是这个
 DATABASES = {
     'default': {
